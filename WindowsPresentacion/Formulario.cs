@@ -25,6 +25,7 @@ namespace WindowsPresentacion
         private Medico m = new Medico();
         private Habitacion h = new Habitacion();
 
+
         private void ClinicaApp_Load(object sender, EventArgs e)
         {
             foreach (var item in context.Medicos)
@@ -107,10 +108,10 @@ namespace WindowsPresentacion
         }
         private void VerTodos(object sender, EventArgs e)
         {
-            gridPacientes.DataSource = DacPaciente.SelectAll();
-        }        
+            ShowAll();
+        }
         private void VerUno(object sender, EventArgs e)
-        {            
+        {
             int nro = int.Parse(txtNroHistCli.Text);
             var p = DacPaciente.Select(nro);
             m = DacMedico.SelectById(p.MedicoId);
@@ -120,7 +121,7 @@ namespace WindowsPresentacion
             txtNroHistCli.ResetText();
         }
         private void Eliminar(object sender, EventArgs e)
-        {            
+        {
             var p = new Paciente() { ID = int.Parse(txtID.Text) };
 
             int rowsAffected = DacPaciente.Delete(p);
@@ -130,7 +131,7 @@ namespace WindowsPresentacion
                 MessageBox.Show("Paciente Eliminado Con Éxito");
                 ShowAll();
 
-                txtID.ResetText();                              
+                txtID.ResetText();
             }
         }
         private void ShowAll()

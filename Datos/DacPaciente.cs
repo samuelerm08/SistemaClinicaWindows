@@ -13,6 +13,8 @@ namespace Datos
     public static class DacPaciente
     {
         private static readonly DbClinicaContext context = new DbClinicaContext();
+
+
         public static List<Paciente> SelectAll()
         {
             return context.Pacientes.ToList();
