@@ -14,7 +14,7 @@ namespace Datos
     {
         private static readonly DbClinicaContext context = new DbClinicaContext();
 
-
+        //Metodos operaciones
         public static List<Paciente> SelectAll()
         {
             return context.Pacientes.ToList();

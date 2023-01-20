@@ -25,7 +25,7 @@ namespace WindowsPresentacion
         private Medico m = new Medico();
         private Habitacion h = new Habitacion();
 
-
+        //Eventos
         private void ClinicaApp_Load(object sender, EventArgs e)
         {
             foreach (var item in context.Medicos)
