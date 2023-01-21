@@ -51,8 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clinica\Clinica.cs" />
-    <Compile Include="Clinica\Habitacion.cs" />
+    <Compile Include="Models\Clinica\Clinica.cs" />
+    <Compile Include="Models\Clinica\Habitacion.cs" />
     <Compile Include="Data\DbClinicaContext.cs" />
     <Compile Include="Migrations\202301182100300_lastMigration.cs" />
     <Compile Include="Migrations\202301182100300_lastMigration.designer.cs">
@@ -63,11 +63,11 @@
       <DependentUpon>202301190000448_newestMigrationEver.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Persona\Director.cs" />
-    <Compile Include="Persona\Enfermero.cs" />
-    <Compile Include="Persona\Medico.cs" />
-    <Compile Include="Persona\Paciente.cs" />
-    <Compile Include="Persona\Persona.cs" />
+    <Compile Include="Models\Persona\Director.cs" />
+    <Compile Include="Models\Persona\Enfermero.cs" />
+    <Compile Include="Models\Persona\Medico.cs" />
+    <Compile Include="Models\Persona\Paciente.cs" />
+    <Compile Include="Models\Persona\Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
