@@ -1,5 +1,6 @@
 ﻿using Entidades.Data;
 using Entidades;
+using Entidades.Clinica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +18,38 @@ namespace Datos
         //Metodos operaciones
         public static List<Paciente> SelectAll()
         {
-            return context.Pacientes.ToList();
+            var query = (from p in context.Pacientes
+                         join m in context.Medicos on p.MedicoId equals m.ID
+                         join h in context.Habitaciones on p.HabitacionId equals h.ID
+                         select new { p, m, h });
+
+            var list = new List<Paciente>();
+
+            foreach (var item in query)
+            {
+                list.Add(new Paciente()
+                {
+                    ID = item.p.ID,
+                    Nombre = item.p.Nombre,
+                    Apellido = item.p.Apellido,
+                    Domicilio = item.p.Domicilio,
+                    Telefono = item.p.Telefono,
+                    Email = item.p.Email,
+                    NroHistoriaClinica = item.p.NroHistoriaClinica,
+                    MedicoId = item.m.ID,
+                    Medico = new Medico() { Nombre = item.m.Nombre },
+                    HabitacionId = item.h.ID,
+                    Habitacion = new Habitacion() { Numero = item.h.Numero }
+                });
+            }
+
+            return list;
         }
 
         public static Paciente Select(int nroHistoriaClinica)
         {
-           return context.Pacientes.FirstOrDefault(x => x.NroHistoriaClinica == nroHistoriaClinica);
-        }       
+            return context.Pacientes.FirstOrDefault(x => x.NroHistoriaClinica == nroHistoriaClinica);
+        }
 
         public static int Insert(Paciente p)
         {

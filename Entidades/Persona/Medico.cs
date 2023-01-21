@@ -21,14 +21,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{ID}\n" +
-                   $"{Nombre}\n" +
-                   $"{Apellido}\n" +
-                   $"{Domicilio}\n" +
-                   $"{Telefono}\n" +
-                   $"{Email}\n" +
-                   $"{Matricula}\n" +
-                   $"{Especialidad}";
+            return $"{Nombre}";
         }
     }
 }

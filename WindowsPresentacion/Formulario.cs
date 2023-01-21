@@ -135,7 +135,7 @@ namespace WindowsPresentacion
             }
         }
         private void ShowAll()
-        {
+        {            
             gridPacientes.DataSource = DacPaciente.SelectAll();
         }
         private void SelectedCombo()

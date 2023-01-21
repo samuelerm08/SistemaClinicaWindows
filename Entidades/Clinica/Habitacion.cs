@@ -22,6 +22,11 @@ namespace Entidades.Clinica
         [Required]
         public string Estado { get; set; }                
         public List<Paciente> Pacientes { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Numero}";
+        }
     }
 }
 
