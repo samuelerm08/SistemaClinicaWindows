@@ -35,7 +35,7 @@ namespace WindowsPresentacion
 
             foreach (var item in context.Habitaciones)
             {
-                comboHabitacion.Items.Add($"{item.Numero}");
+                comboHabitacion.Items.Add(item.Numero);
             }
         }
         private void Insertar(object sender, EventArgs e)
