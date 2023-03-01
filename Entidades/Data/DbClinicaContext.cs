@@ -1,4 +1,5 @@
 ﻿using Entidades.Clinica;
+using Entidades.Models.Clinica;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,5 +15,6 @@ namespace Entidades.Data
         public DbSet<Habitacion> Habitaciones { get; set; }
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

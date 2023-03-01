@@ -1,6 +1,6 @@
 ﻿namespace WindowsPresentacion
 {
-    partial class ClinicaApp
+    partial class Pacientes
     {
         /// <summary>
         /// Required designer variable.
@@ -324,7 +324,7 @@
             this.gridPacientes.Size = new System.Drawing.Size(369, 173);
             this.gridPacientes.TabIndex = 1;
             // 
-            // ClinicaApp
+            // Pacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -358,8 +358,8 @@
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ClinicaApp";
-            this.Text = "ClinicaApp";
+            this.Name = "Pacientes";
+            this.Text = "Pacientes";
             this.Load += new System.EventHandler(this.ClinicaApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridPacientes)).EndInit();
             this.ResumeLayout(false);

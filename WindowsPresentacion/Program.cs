@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsPresentacion.Usuarios;
 
 namespace WindowsPresentacion
 {
@@ -16,7 +17,7 @@ namespace WindowsPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClinicaApp());
+            Application.Run(new Login());
         }
     }
 }

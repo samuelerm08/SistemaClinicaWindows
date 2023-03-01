@@ -55,10 +55,15 @@
     <Compile Include="Migrations\202302232330161_newMigration.designer.cs">
       <DependentUpon>202302232330161_newMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303011726574_usersTable.cs" />
+    <Compile Include="Migrations\202303011726574_usersTable.designer.cs">
+      <DependentUpon>202303011726574_usersTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clinica\Clinica.cs" />
     <Compile Include="Models\Clinica\Habitacion.cs" />
     <Compile Include="Data\DbClinicaContext.cs" />
+    <Compile Include="Models\Clinica\Usuario.cs" />
     <Compile Include="Models\Persona\Director.cs" />
     <Compile Include="Models\Persona\Enfermero.cs" />
     <Compile Include="Models\Persona\Medico.cs" />
@@ -73,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202302232330161_newMigration.resx">
       <DependentUpon>202302232330161_newMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303011726574_usersTable.resx">
+      <DependentUpon>202303011726574_usersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

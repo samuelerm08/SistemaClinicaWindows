@@ -14,9 +14,9 @@ using Entidades.Data;
 
 namespace WindowsPresentacion
 {
-    public partial class ClinicaApp : Form
+    public partial class Pacientes : Form
     {
-        public ClinicaApp()
+        public Pacientes()
         {
             InitializeComponent();
         }

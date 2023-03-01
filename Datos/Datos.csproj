@@ -54,6 +54,7 @@
     <Compile Include="DacHabitacion.cs" />
     <Compile Include="DacMedico.cs" />
     <Compile Include="DacPaciente.cs" />
+    <Compile Include="DacUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
