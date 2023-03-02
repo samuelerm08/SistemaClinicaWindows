@@ -33,10 +33,13 @@ namespace WindowsPresentacion.Usuarios
         private void Ingreso(object sender, EventArgs e)
         {
             var usuarioValido = DacUsuario.Validate(userText.Text, passwordText.Text);
+            var inicio = new Inicio();
 
             if (usuarioValido != null)
             {
                 MessageBox.Show("Ingreso Exitoso");
+                this.Hide();
+                inicio.Show();
             }
             else
                 MessageBox.Show("Usuario invalido, volver a intentar");

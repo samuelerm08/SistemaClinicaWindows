@@ -263,7 +263,7 @@
             this.btnInsertar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInsertar.Location = new System.Drawing.Point(265, 22);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(74, 45);
+            this.btnInsertar.Size = new System.Drawing.Size(91, 45);
             this.btnInsertar.TabIndex = 20;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -274,7 +274,7 @@
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnModificar.Location = new System.Drawing.Point(265, 91);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(74, 45);
+            this.btnModificar.Size = new System.Drawing.Size(91, 45);
             this.btnModificar.TabIndex = 21;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.btnVerTodos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnVerTodos.Location = new System.Drawing.Point(265, 159);
             this.btnVerTodos.Name = "btnVerTodos";
-            this.btnVerTodos.Size = new System.Drawing.Size(74, 45);
+            this.btnVerTodos.Size = new System.Drawing.Size(91, 45);
             this.btnVerTodos.TabIndex = 22;
             this.btnVerTodos.Text = "Ver Todos";
             this.btnVerTodos.UseVisualStyleBackColor = true;
@@ -296,9 +296,9 @@
             this.btnVerUno.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnVerUno.Location = new System.Drawing.Point(265, 227);
             this.btnVerUno.Name = "btnVerUno";
-            this.btnVerUno.Size = new System.Drawing.Size(74, 45);
+            this.btnVerUno.Size = new System.Drawing.Size(91, 45);
             this.btnVerUno.TabIndex = 23;
-            this.btnVerUno.Text = "Ver Uno";
+            this.btnVerUno.Text = "Ver Uno (N° h.Clinica)";
             this.btnVerUno.UseVisualStyleBackColor = true;
             this.btnVerUno.Click += new System.EventHandler(this.VerUno);
             // 
@@ -307,7 +307,7 @@
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminar.Location = new System.Drawing.Point(265, 293);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(74, 45);
+            this.btnEliminar.Size = new System.Drawing.Size(91, 45);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -329,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(363, 527);
+            this.ClientSize = new System.Drawing.Size(368, 527);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnVerUno);
             this.Controls.Add(this.btnVerTodos);

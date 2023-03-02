@@ -92,7 +92,7 @@ namespace WindowsPresentacion
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Paciente Modificar Con Éxito");
+                MessageBox.Show("Paciente Modificado Con Éxito");
                 ShowAll();
 
                 txtID.ResetText();

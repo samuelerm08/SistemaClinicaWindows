@@ -42,7 +42,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 130);
+            this.label3.Location = new System.Drawing.Point(13, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 8;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 81);
+            this.label2.Location = new System.Drawing.Point(13, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 13);
             this.label2.TabIndex = 7;
@@ -59,14 +59,15 @@
             // 
             // password1
             // 
-            this.password1.Location = new System.Drawing.Point(140, 127);
+            this.password1.Location = new System.Drawing.Point(16, 151);
             this.password1.Name = "password1";
+            this.password1.PasswordChar = '*';
             this.password1.Size = new System.Drawing.Size(133, 20);
             this.password1.TabIndex = 6;
             // 
             // userName
             // 
-            this.userName.Location = new System.Drawing.Point(140, 78);
+            this.userName.Location = new System.Drawing.Point(16, 72);
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(133, 20);
             this.userName.TabIndex = 5;
@@ -74,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 187);
+            this.label1.Location = new System.Drawing.Point(13, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 10;
@@ -82,8 +83,9 @@
             // 
             // password2
             // 
-            this.password2.Location = new System.Drawing.Point(140, 184);
+            this.password2.Location = new System.Drawing.Point(16, 236);
             this.password2.Name = "password2";
+            this.password2.PasswordChar = '*';
             this.password2.Size = new System.Drawing.Size(133, 20);
             this.password2.TabIndex = 9;
             // 
@@ -91,7 +93,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 22);
+            this.label4.Location = new System.Drawing.Point(12, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 22);
             this.label4.TabIndex = 11;
@@ -99,9 +101,9 @@
             // 
             // btnRegistro
             // 
-            this.btnRegistro.Location = new System.Drawing.Point(171, 227);
+            this.btnRegistro.Location = new System.Drawing.Point(189, 106);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(102, 23);
+            this.btnRegistro.Size = new System.Drawing.Size(126, 86);
             this.btnRegistro.TabIndex = 12;
             this.btnRegistro.Text = "Confirmar Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
@@ -120,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(352, 281);
+            this.ClientSize = new System.Drawing.Size(327, 300);
             this.Controls.Add(this.valido);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.label4);
@@ -131,7 +133,7 @@
             this.Controls.Add(this.password1);
             this.Controls.Add(this.userName);
             this.Name = "Registro";
-            this.Text = "Registro";            
+            this.Text = "Registro";
             this.ResumeLayout(false);
             this.PerformLayout();
 

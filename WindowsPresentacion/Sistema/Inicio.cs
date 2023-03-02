@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsPresentacion.Sistema;
+using WindowsPresentacion.Usuarios;
 
 namespace WindowsPresentacion
 {
@@ -35,6 +37,30 @@ namespace WindowsPresentacion
         private void FechaHora(object sender, EventArgs e)
         {
             labelDate.Text = "Fecha: " + DateTime.Now.ToString();
+        }
+
+        private void VerPacientes(object sender, EventArgs e)
+        {
+            var pacientes = new Pacientes();
+            pacientes.ShowDialog();
+        }
+
+        private void VerHabitaciones(object sender, EventArgs e)
+        {
+            var habitaciones = new Habitaciones();
+            habitaciones.ShowDialog();
+        }
+
+        private void VerMedicos(object sender, EventArgs e)
+        {
+            var medicos = new Medicos();
+            medicos.ShowDialog();
+        }
+
+        private void Salir(object sender, EventArgs e)
+        {            
+            this.Close();
+            Environment.Exit(0);
         }
     }
 }

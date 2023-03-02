@@ -60,10 +60,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inicio.cs">
+    <Compile Include="Sistema\Habitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
+    <Compile Include="Sistema\Habitaciones.Designer.cs">
+      <DependentUpon>Habitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Medicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\Medicos.Designer.cs">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Registro.cs">
@@ -78,21 +90,27 @@
     <Compile Include="Usuarios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes.cs">
+    <Compile Include="Sistema\Pacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pacientes.Designer.cs">
+    <Compile Include="Sistema\Pacientes.Designer.cs">
       <DependentUpon>Pacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Inicio.resx">
+    <EmbeddedResource Include="Sistema\Habitaciones.resx">
+      <DependentUpon>Habitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\Medicos.resx">
+      <DependentUpon>Medicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes.resx">
+    <EmbeddedResource Include="Sistema\Pacientes.resx">
       <DependentUpon>Pacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
