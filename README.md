@@ -1,4 +1,4 @@
-# slnIntegrador-Continuacion
+# Sistema Clinica Windows Forms
 Aplicación de Windows Forms con operaciones CRUD usando Entity Framework 6 para la creación de la base de datos.
 
 Esta aplicación está basada en un sistema de gestión de una clínica. En la misma se podrán realizar operaciones de inserción, modificación, visualizar detalles y/o eliminar algún Paciente, Medico o Habitacion en el sistema.
