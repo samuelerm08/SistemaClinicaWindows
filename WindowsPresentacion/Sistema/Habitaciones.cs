@@ -25,19 +25,26 @@ namespace WindowsPresentacion.Sistema
             var hab = new Habitacion()
             {
                 Numero = txtNumero.Text,
-                Estado = txtEstado.Text
+                Estado = comboEstado.Text
             };
 
-            var rA = DacHabitacion.Insert(hab);
-
-            if (rA > 0)
+            try
             {
-                MessageBox.Show("Habitación insertada con éxito");
-                ShowAll();
+                var rA = DacHabitacion.Insert(hab);
 
-                txtNumero.ResetText();
-                txtEstado.ResetText();
+                if (rA > 0)
+                {
+                    MessageBox.Show("Habitación insertada con éxito");
+                    ShowAll();
+
+                    txtNumero.ResetText();
+                    comboEstado.ResetText();
+                }
             }
+            catch
+            {
+                MessageBox.Show("Se deben llenar todos los campos correctamente");
+            }            
         }
 
         private void Editar(object sender, EventArgs e)
@@ -45,19 +52,26 @@ namespace WindowsPresentacion.Sistema
             var hab = new Habitacion()
             {
                 Numero = txtNumero.Text,
-                Estado = txtEstado.Text
+                Estado = comboEstado.Text
             };
 
-            var rA = DacHabitacion.Insert(hab);
-
-            if (rA > 0)
+            try
             {
-                MessageBox.Show("Habitación insertada con éxito");
-                ShowAll();
+                var rA = DacHabitacion.Insert(hab);
 
-                txtNumero.ResetText();
-                txtEstado.ResetText();
+                if (rA > 0)
+                {
+                    MessageBox.Show("Habitación insertada con éxito");
+                    ShowAll();
+
+                    txtNumero.ResetText();
+                    comboEstado.ResetText();
+                }
             }
+            catch
+            {
+                MessageBox.Show("Se deben llenar todos los campos correctamente");
+            }            
         }
 
         private void VerTodos(object sender, EventArgs e)
@@ -73,13 +87,19 @@ namespace WindowsPresentacion.Sistema
         //Ver por ID
         private void VerUno(object sender, EventArgs e)
         {
-            var hab = DacHabitacion.SelectById(int.Parse(txtID.Text));
-
-            MessageBox.Show($"ID: {hab.ID}\n" +
+            try
+            {
+                var hab = DacHabitacion.SelectById(int.Parse(txtID.Text));
+                MessageBox.Show($"ID: {hab.ID}\n" +
                             $"Numero: {hab.Numero}\n" +
                             $"Estado: {hab.Estado}\n");
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese un ID Válido");
+            }
+            
         }
-
         private void Eliminar(object sender, EventArgs e)
         {
             var habitacion = new Habitacion()
@@ -87,15 +107,28 @@ namespace WindowsPresentacion.Sistema
                 ID = int.Parse(txtID.Text)
             };
 
-            int rowsAffected = DacHabitacion.Delete(habitacion);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Habitación eliminada con éxito");
-                ShowAll();
-            }
+                int rowsAffected = DacHabitacion.Delete(habitacion);
 
-            txtID.ResetText();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Habitación eliminada con éxito");
+                    ShowAll();
+                }
+
+                txtID.ResetText();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese un ID Válido");
+            }            
+        }
+
+        private void Habitaciones_Load(object sender, EventArgs e)
+        {
+            comboEstado.Items.Add("Disponible");
+            comboEstado.Items.Add("Ocupada");
         }
     }
 }

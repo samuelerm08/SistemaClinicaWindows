@@ -33,27 +33,34 @@ namespace WindowsPresentacion.Sistema
                 Matricula = txtMatr.Text
             };
 
-            int rowsAffected = DacMedico.Insert(medico);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Medico Insertado Con Éxito");
-                ShowAll();
+                int rowsAffected = DacMedico.Insert(medico);
 
-                txtNombre.ResetText();
-                txtApellido.ResetText();
-                txtDomicilio.ResetText();
-                txtTelefono.ResetText();
-                txtEmail.ResetText();
-                txtEsp.ResetText();
-                txtMatr.ResetText();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Medico Insertado Con Éxito");
+                    ShowAll();
+
+                    txtNombre.ResetText();
+                    txtApellido.ResetText();
+                    txtDomicilio.ResetText();
+                    txtTelefono.ResetText();
+                    txtEmail.ResetText();
+                    txtEsp.ResetText();
+                    txtMatr.ResetText();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Debe completar todos los campos correctamente");
             }
         }
-
         private void Editar(object sender, EventArgs e)
         {
             var medico = new Medico()
             {
+                ID = int.Parse(txtId.Text),
                 Nombre = txtNombre.Text,
                 Apellido = txtApellido.Text,
                 Domicilio = txtDomicilio.Text,
@@ -63,19 +70,27 @@ namespace WindowsPresentacion.Sistema
                 Matricula = txtMatr.Text
             };
 
-            int rowsAffected = DacMedico.Update(medico);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Medico Modificado Con Éxito");
-                ShowAll();
+                int rowsAffected = DacMedico.Update(medico);
 
-                txtNombre.ResetText();
-                txtApellido.ResetText();
-                txtDomicilio.ResetText();
-                txtTelefono.ResetText();
-                txtEmail.ResetText();
-                txtEsp.ResetText();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Medico Modificado Con Éxito");
+                    ShowAll();
+
+                    txtNombre.ResetText();
+                    txtApellido.ResetText();
+                    txtDomicilio.ResetText();
+                    txtTelefono.ResetText();
+                    txtEmail.ResetText();
+                    txtEsp.ResetText();
+                    txtMatr.ResetText();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Debe completar todos los campos correctamente");
             }
         }
 
@@ -92,13 +107,26 @@ namespace WindowsPresentacion.Sistema
         //Ver por ID
         private void VerUno(object sender, EventArgs e)
         {
-            var medico = DacMedico.SelectById(int.Parse(txtId.Text));
+            try
+            {
+                var medico = DacMedico.SelectById(int.Parse(txtId.Text));
 
-            MessageBox.Show($"Nombre: {medico.Nombre}\n" +
-                            $"Apellido: {medico.Apellido}\n" +
-                            $"Matricula: {medico.Matricula}\n" +
-                            $"Telefono: {medico.Telefono}");
+                if (medico != null)
+                {
+                    MessageBox.Show($"Nombre: {medico.Nombre}\n" +
+                                $"Apellido: {medico.Apellido}\n" +
+                                $"Matricula: {medico.Matricula}\n" +
+                                $"Telefono: {medico.Telefono}");
+                }
+                else
+                    MessageBox.Show("El ID ingresado no existe");
+            }
+            catch
+            {
+                MessageBox.Show("Debe ingresar un ID Válido");
+            }
         }
+
 
         private void Eliminar(object sender, EventArgs e)
         {
@@ -107,16 +135,24 @@ namespace WindowsPresentacion.Sistema
                 ID = int.Parse(txtId.Text)
             };
 
-            int rowsAffected = DacMedico.Delete(medico);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Medico eliminado con éxito");
-                ShowAll();
+                int rowsAffected = DacMedico.Delete(medico);
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Medico eliminado con éxito");
+                    ShowAll();
+                }
+
+                txtId.ResetText();
             }
-            
-            txtId.ResetText();
-        }        
+            catch
+            {
+                MessageBox.Show("Por favor ingrese un ID Válido");
+            }
+           
+        }
     }
 }
 

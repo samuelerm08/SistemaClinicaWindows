@@ -34,13 +34,13 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblPacientes = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnVerUno = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.gridHabitacion = new System.Windows.Forms.DataGridView();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridHabitacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,14 +113,6 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Estado";
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(216, 184);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(5);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(135, 23);
-            this.txtEstado.TabIndex = 16;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -192,12 +184,21 @@
             this.gridHabitacion.Size = new System.Drawing.Size(441, 174);
             this.gridHabitacion.TabIndex = 30;
             // 
+            // comboEstado
+            // 
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(216, 180);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(135, 25);
+            this.comboEstado.TabIndex = 31;
+            // 
             // Habitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(429, 494);
+            this.Controls.Add(this.comboEstado);
             this.Controls.Add(this.gridHabitacion);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnVerUno);
@@ -205,7 +206,6 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNumero);
@@ -215,6 +215,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Habitaciones";
             this.Text = "Habitaciones";
+            this.Load += new System.EventHandler(this.Habitaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridHabitacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,12 +230,12 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblPacientes;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnVerUno;
         private System.Windows.Forms.Button btnVerTodos;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.DataGridView gridHabitacion;
+        private System.Windows.Forms.ComboBox comboEstado;
     }
 }

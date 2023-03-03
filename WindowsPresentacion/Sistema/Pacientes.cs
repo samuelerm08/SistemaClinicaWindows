@@ -54,21 +54,28 @@ namespace WindowsPresentacion
                 HabitacionId = h.ID
             };
 
-            int rowsAffected = DacPaciente.Insert(p);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Paciente Insertado Con Éxito");
-                ShowAll();
+                int rowsAffected = DacPaciente.Insert(p);
 
-                txtNombre.ResetText();
-                txtApellido.ResetText();
-                txtDomicilio.ResetText();
-                txtTelefono.ResetText();
-                txtEmail.ResetText();
-                txtNroHistCli.ResetText();
-                comboMedico.ResetText();
-                comboHabitacion.ResetText();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Paciente Insertado Con Éxito");
+                    ShowAll();
+
+                    txtNombre.ResetText();
+                    txtApellido.ResetText();
+                    txtDomicilio.ResetText();
+                    txtTelefono.ResetText();
+                    txtEmail.ResetText();
+                    txtNroHistCli.ResetText();
+                    comboMedico.ResetText();
+                    comboHabitacion.ResetText();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Se deben llenar todos los campos correctamente");
             }
         }
         private void Modificar(object sender, EventArgs e)
@@ -88,22 +95,29 @@ namespace WindowsPresentacion
                 HabitacionId = h.ID
             };
 
-            int rowsAffected = DacPaciente.Update(p);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Paciente Modificado Con Éxito");
-                ShowAll();
+                int rowsAffected = DacPaciente.Update(p);
 
-                txtID.ResetText();
-                txtNombre.ResetText();
-                txtApellido.ResetText();
-                txtDomicilio.ResetText();
-                txtTelefono.ResetText();
-                txtEmail.ResetText();
-                txtNroHistCli.ResetText();
-                comboMedico.ResetText();
-                comboHabitacion.ResetText();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Paciente Modificado Con Éxito");
+                    ShowAll();
+
+                    txtID.ResetText();
+                    txtNombre.ResetText();
+                    txtApellido.ResetText();
+                    txtDomicilio.ResetText();
+                    txtTelefono.ResetText();
+                    txtEmail.ResetText();
+                    txtNroHistCli.ResetText();
+                    comboMedico.ResetText();
+                    comboHabitacion.ResetText();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Se deben llenar todos los campos correctamente");
             }
         }
         private void VerTodos(object sender, EventArgs e)
@@ -112,30 +126,44 @@ namespace WindowsPresentacion
         }
         private void VerUno(object sender, EventArgs e)
         {
-            int nro = int.Parse(txtNroHistCli.Text);
-            var p = DacPaciente.Select(nro);
-            m = DacMedico.SelectById(p.MedicoId);
-            h = DacHabitacion.SelectById(p.HabitacionId);
+            try
+            {
+                int nro = int.Parse(txtNroHistCli.Text);
+                var p = DacPaciente.Select(nro);
+                m = DacMedico.SelectById(p.MedicoId);
+                h = DacHabitacion.SelectById(p.HabitacionId);
 
-            MessageBox.Show($"Paciente: \n{p}\nMedico: {m.Nombre}\nHabitacion: {h.Numero}");
-            txtNroHistCli.ResetText();
+                MessageBox.Show($"Paciente: \n{p}\nMedico: {m.Nombre}\nHabitacion: {h.Numero}");
+                txtNroHistCli.ResetText();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese un número de Historia Clinica Válido");
+            }
         }
         private void Eliminar(object sender, EventArgs e)
         {
             var p = new Paciente() { ID = int.Parse(txtID.Text) };
 
-            int rowsAffected = DacPaciente.Delete(p);
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Paciente Eliminado Con Éxito");
-                ShowAll();
+                int rowsAffected = DacPaciente.Delete(p);
 
-                txtID.ResetText();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Paciente Eliminado Con Éxito");
+                    ShowAll();
+
+                    txtID.ResetText();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese un ID Válido");
             }
         }
         private void ShowAll()
-        {            
+        {
             gridPacientes.DataSource = DacPaciente.SelectAll();
         }
         private void SelectedCombo()
