@@ -25,7 +25,7 @@ namespace WindowsPresentacion.Usuarios
         private Usuario u = new Usuario();
 
         private void Registrar(object sender, EventArgs e)
-        {                     
+        {
             var registro = new Registro();
             registro.ShowDialog();
         }
@@ -34,18 +34,25 @@ namespace WindowsPresentacion.Usuarios
         {
             var usuarioValido = DacUsuario.Validate(userText.Text, passwordText.Text);
             var inicio = new Inicio();
-
-            if (usuarioValido != null)
+            try
             {
-                MessageBox.Show("Ingreso Exitoso");
-                this.Hide();
-                inicio.Show();
+                if (!(String.IsNullOrEmpty(userText.Text.Trim()) ||
+                    String.IsNullOrEmpty(passwordText.Text.Trim())))
+                {
+                    if (usuarioValido != null)
+                    {
+                        MessageBox.Show("Ingreso Exitoso");
+                        this.Hide();
+                        inicio.Show();
+                    }
+                    else
+                        MessageBox.Show("Usuario invalido, volver a intentar");
+                }
+                else MessageBox.Show("No se aceptan campos vacíos. Debera llenarlos");
             }
-            else
-                MessageBox.Show("Usuario invalido, volver a intentar");
-
+            catch { MessageBox.Show("Catched"); }            
             userText.ResetText();
             passwordText.ResetText();
-        }          
+        }
     }
 }
